@@ -34,7 +34,7 @@ end
 
 
 # Added gems
-
+gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'devise', '3.0.0.rc'
 
 # Use ActiveModel has_secure_password
