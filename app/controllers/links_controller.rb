@@ -11,6 +11,7 @@ class LinksController < ApplicationController
     @link = Link.create(user_params)
     if @link.save
       flash[:success] = "Your link has been submitted!"
+      render 'show'
     else
       flash[:notice] = "Sorry, no goose..."
       render 'new'
