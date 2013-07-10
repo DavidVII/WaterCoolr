@@ -13,3 +13,17 @@
  */
 
 @import "bootstrap";
+
+body {
+  padding-top: 60px;
+}
+
+// Miscellaneous
+
+.debug_dump {
+  clear: both;
+  margin-top: 45px;
+}
+
+// Media Queries
+@import "bootstrap-responsive";
