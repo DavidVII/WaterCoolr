@@ -1,0 +1,24 @@
+<%= form_for(@link) do |f| %>
+  <% if @link.errors.any? %>
+  <div class="alert alert-error">
+    <h3><%= pluralize(@link.errors.count, "error") %> stopped this link from being submitted:</h3>
+
+    <ul>
+      <%= @link.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
