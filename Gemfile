@@ -36,6 +36,8 @@ end
 # Added gems
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'devise', '3.0.0.rc'
+gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
