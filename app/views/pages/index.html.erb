@@ -1,9 +1,9 @@
 <p><%= link_to 'Submit a link', new_link_path, class: 'btn btn-primary' %></p>
-
-<ul>
-  <% @links.each do |link| %>
-    <li><%= link_to link.title, link.url, { target: "_blank" } %> | <%= link_to "Comments", link %></li>
-  <% end %>
-</ul>
+<% @links.each do |link| %>
+  <div class="entry">
+    <h3 class="title"><%= link_to link.title, link.url, { target: "_blank" } %></h3>
+    <p><%= link_to "Comments", link %></p>
+  </div>
+<% end %>
 
 <%= will_paginate @links %>

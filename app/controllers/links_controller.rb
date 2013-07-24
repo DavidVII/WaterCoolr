@@ -4,6 +4,7 @@ class LinksController < ApplicationController
   def show
     @link = Link.find(params[:id])
     @comment = Comment.new
+    @linkComments = @link.comments.order('created_at DESC')
   end
 
   def new
@@ -12,6 +13,7 @@ class LinksController < ApplicationController
 
   def create    
     @link = current_user.links.create(link_params)
+    
     if @link.save
       flash[:success] = "Your link has been submitted!"
       redirect_to @link
