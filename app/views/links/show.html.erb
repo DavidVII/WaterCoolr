@@ -1,1 +1,39 @@
-<h1>Show action</h1>
+<h2>
+  <%= link_to @link.title, @link.url %>
+</h2>
+
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+  <div class="alert alert-error">
+    <h3><%= pluralize(@comment.errors.count, "error") %> stopped this comment from being submitted:</h3>
+
+    <ul>
+      <%= @comment.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_area :message, placeholder: "Add a comment" %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn" %>
+  </div>
+  <%= f.hidden_field :link_id, value: @link.id %>
+<% end %>
+
+<% if @link.comments.present? %>
+  <h2>Comments</h2>
+<% else %>
+  <h2>No comments yet...</h2>
+<% end %>
+
+<div class="commentsWrap">
+  <% @link.comments.each do |comment| %>
+    <div>
+      <p><%= comment.message %></p>
+    </div>
+  <% end %>
+</div>
