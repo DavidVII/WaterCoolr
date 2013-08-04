@@ -7,6 +7,18 @@
     <% else %>
       <p><%= link_to "Comment", link %></p>
     <% end %>
+    <p>
+      <%= link_to "+", votes_path( vote: { link_id: link.id, up: true }), method: :post %>
+      <%= link_to "-", votes_path( vote: { link_id: link.id, up: false }), method: :post %>
+    </p>
+
+    <p>
+      Up votes: <%= link.votes.where(up: true).count %>
+      Down votes: <%= link.votes.where(up: false).count %>
+    </p>
+    <p>
+      Votes: <%= link.votes.where(up: true).count - link.votes.where(up: false).count %>
+    </p>
   </div>
 <% end %>
 
