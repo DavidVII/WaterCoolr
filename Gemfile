@@ -40,7 +40,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
 
 # Search
-gem 'textacular', "~> 3.0", require: 'textacular/rails'
+gem 'textacular', git: 'git@github.com:textacular/textacular.git'
 
 group :test do
   gem 'database_cleaner'
