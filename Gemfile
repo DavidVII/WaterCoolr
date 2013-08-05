@@ -42,6 +42,11 @@ gem 'bootstrap-will_paginate'
 # Search
 gem 'textacular', "~> 3.0", require: 'textacular/rails'
 
+group :test do
+  gem 'database_cleaner'
+  gem 'capybara'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
