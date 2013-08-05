@@ -1,4 +1,7 @@
-<p><%= link_to 'Submit a link', new_link_path, class: 'btn btn-primary' %></p>
+<%= content_for :message do %>
+  <p>Welcome! I built this website so that I could learn something that will help me take over the world.</p>
+<% end %>
+
 <% @links.each do |link| %>
   <div class="entry">
     <h3 class="title"><%= link_to link.title, link.url, { target: "_blank" } %></h3>
