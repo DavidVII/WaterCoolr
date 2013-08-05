@@ -21,6 +21,6 @@ class LinkCreateTest < ActionDispatch::IntegrationTest
     link = Link.last
     assert_equal link_path(link), current_path
     assert page.has_content?(link.title)
-    assert page.has_link?(link.title), "The url is missing"
+    assert page.has_link?(link.title, href: link.url), "The url is missing"
   end
 end
