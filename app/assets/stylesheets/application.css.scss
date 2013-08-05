@@ -28,11 +28,23 @@ body {
   margin: 0;
 }
 
+// Sidebar
+
+.sidebar {
+  h3 {
+    margin-top: 0;
+  }
+}
+
 // Miscellaneous
 
 .debug_dump {
   clear: both;
   margin-top: 45px;
+}
+
+.center {
+  text-align: center;
 }
 
 // Media Queries
