@@ -1,0 +1,30 @@
+<p><%= pluralize(@links.count, "link") %> matched "<%= params[:q] %>"</p>
+
+<% @links.each do |link| %>
+  <div class="entry">
+    <h3><%= link_to link.title, link.url, {target: "_blank"} %></h3>
+    <% if link.comments.present? %>
+      <p><%= link_to pluralize(link.comments.count, "Comment"), link %></p>
+    <% else %>
+      <p><%= link_to "Comment", link %></p>
+    <% end %>
+
+    <% if current_user && current_user.votes.where(link_id: link.id, up: true).present? %>
+      <p>
+        Up Voted - 
+        <%= link_to "Down Vote", votes_path( vote: { link_id: link.id, up: false }), method: :post %>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to "Up Vote", votes_path( vote: { link_id: link.id, up: true }), method: :post %>
+        - Down Voted
+      </p>
+    <% end %>
+
+    <p>
+      Votes: <%= link.votes.where(up: true).count - link.votes.where(up: false).count %>
+    </p>
+  </div>
+<% end %>
+
+<%= will_paginate @links %>
