@@ -1,9 +1,13 @@
 class VotesController < ApplicationController
   def create
-    @vote = current_user.votes.where(link_id: vote_params[:link_id]).first || current_user.votes.create(vote_params)
-    @vote.update_attributes(up: vote_params[:up])
-
-    redirect_to :back
+    if current_user.present?
+      @vote = current_user.votes.where(link_id: vote_params[:link_id]).first || current_user.votes.create(vote_params)
+      @vote.update_attributes(up: vote_params[:up])
+      redirect_to :back
+    else
+      redirect_to new_user_session_path
+      flash[:notice] = "You must be signed in to vote"
+    end
   end
 
   private
