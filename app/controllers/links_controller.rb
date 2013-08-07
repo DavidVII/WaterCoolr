@@ -8,12 +8,12 @@ class LinksController < ApplicationController
   end
 
   def new
-    @link = Link.new    
+    @link = Link.new
   end
 
-  def create    
+  def create
     @link = current_user.links.create(link_params)
-    
+
     if @link.save
       flash[:success] = "Your link has been submitted!"
       redirect_to @link
