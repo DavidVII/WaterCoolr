@@ -40,6 +40,7 @@ gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'devise', '3.0.0.rc'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
+gem "font-awesome-rails"
 
 # Search
 gem 'textacular', git: 'https://github.com/textacular/textacular.git'
