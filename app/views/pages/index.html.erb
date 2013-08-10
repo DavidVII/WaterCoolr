@@ -18,13 +18,12 @@
         - Down Voted
       </p>
     <% else %>
-      <%= link_to "Up Vote", votes_path( vote: { link_id: link.id, up: true }), method: :post %> - 
-      <%= link_to "Down Vote", votes_path( vote: { link_id: link.id, up: false }), method: :post %>
+      <div class="voting">
+        <%= link_to "", votes_path( vote: { link_id: link.id, up: true } ), class: "icon-thumbs-up", method: :post %>
+        <p><%= link.votes.where(up: true).count - link.votes.where(up: false).count %></p>
+        <%= link_to "", votes_path( vote: { link_id: link.id, up: false }), class: "icon-thumbs-down", method: :post %>
+      </div>
     <% end %>
-
-    <p>
-      Votes: <%= link.votes.where(up: true).count - link.votes.where(up: false).count %>
-    </p>
   </div>
 <% end %>
 
