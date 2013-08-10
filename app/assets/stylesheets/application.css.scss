@@ -42,7 +42,7 @@ body {
   position: absolute;
   top: 5px; left: 5px;
 
-  a {
+  a, i {
     color: $lightGray;
     display: block;
     text-decoration: none;
@@ -56,6 +56,14 @@ body {
     font-size: 12px;
     margin: 0;
     text-align: center;
+  }
+
+  .icon-thumbs-up.active {
+    color: $thumbsUp;
+  }
+
+  .icon-thumbs-down.active {
+    color: $thumbsDown;
   }
 }
 
