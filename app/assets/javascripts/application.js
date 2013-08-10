@@ -15,3 +15,11 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+function ready() {
+  $('.comments div:last-child').addClass('last');
+  $('#main .entry:last-child').addClass('last');
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

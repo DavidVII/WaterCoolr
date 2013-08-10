@@ -21,6 +21,12 @@ body {
   padding-top: 60px;
 }
 
+// Typography
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
 // Links
 
 .entry {
@@ -30,7 +36,6 @@ body {
   position: relative;
 
   .title {
-    font-weight: normal;
     margin: 0 0 5px;
   }
 }
@@ -64,6 +69,24 @@ body {
 
   .icon-thumbs-down.active {
     color: $thumbsDown;
+  }
+}
+
+// Comments
+
+.comments {
+  div {
+    border-bottom: 1px solid $lightGray;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+    &.last {
+      border-bottom: none;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
   }
 }
 
