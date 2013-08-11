@@ -38,7 +38,8 @@
 <div class="comments">
   <% @linkComments.each do |comment| %>
     <div>
-      <p><%= comment.message %></p>
+      <%= gravatar_for(comment.user, 48) %>
+      <p class="comment-text"><%= comment.message %></p>
       <p><small>Posted by <%= comment.user.username %> <%= time_ago_in_words(comment.created_at) %> ago.</small></p>
     </div>
   <% end %>

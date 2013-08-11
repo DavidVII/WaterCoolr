@@ -79,6 +79,7 @@ h1, h2, h3, h4, h5 {
     border-bottom: 1px solid $lightGray;
     margin-bottom: 10px;
     padding-bottom: 10px;
+    overflow: hidden;
 
     &.last {
       border-bottom: none;
@@ -86,6 +87,22 @@ h1, h2, h3, h4, h5 {
   }
 
   p {
+    margin-bottom: 0;
+    line-height: 1em;
+  }
+
+  .comment-text {
+    margin: 10px 0 5px;
+  }
+
+  small {
+    color: #ccc;
+  }
+
+  .gravatar {
+    display: block;
+    float: left;
+    margin-right: 10px;
     margin-bottom: 0;
   }
 }
