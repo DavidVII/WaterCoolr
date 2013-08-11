@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :correct_user, only: :destroy
+  before_filter :correct_user, only: [:edit, :update, :destroy]
 
   def create
     @comment = current_user.comments.create(comment_params)
@@ -12,6 +12,19 @@ class CommentsController < ApplicationController
     end
 
    redirect_to :back 
+  end
+
+  def edit
+  end
+
+  def update
+    if @comment.update_attributes(params[:message])
+      flash[:success] = "Your comment has been updated"
+      redirect_to :back
+    else
+      flash[:error] = "Something went wrong"
+      redirect_to :back
+    end
   end
 
   def destroy

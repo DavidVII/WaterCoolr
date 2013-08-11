@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   def show
     @link = Link.find(params[:id])
     @comment = Comment.new
-    @linkComments = @link.comments.order('created_at DESC')
+    @comments = @link.comments.order('created_at DESC')
   end
 
   def new
