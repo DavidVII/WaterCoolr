@@ -7,25 +7,7 @@
       <p><%= link_to "Comment", link %></p>
     <% end %>
 
-    <% if current_user && current_user.votes.where(link_id: link.id, up: true).present? %>
-      <div class="voting">
-        <i class="icon-thumbs-up active"></i>
-        <p><%= link.votes.where(up: true).count - link.votes.where(up: false).count %></p>
-        <%= link_to "", votes_path( vote: { link_id: link.id, up: false }), class: "icon-thumbs-down", method: :post %>
-      </div>
-    <% elsif current_user && current_user.votes.where(link_id: link.id, up: false).present? %>
-      <div class="voting">
-        <%= link_to "", votes_path( vote: { link_id: link.id, up: true } ), class: "icon-thumbs-up", method: :post %>
-        <p><%= link.votes.where(up: true).count - link.votes.where(up: false).count %></p>
-        <i class="icon-thumbs-down active"></i>
-      </div>
-    <% else %>
-      <div class="voting">
-        <%= link_to "", votes_path( vote: { link_id: link.id, up: true } ), class: "icon-thumbs-up", method: :post %>
-        <p><%= link.votes.where(up: true).count - link.votes.where(up: false).count %></p>
-        <%= link_to "", votes_path( vote: { link_id: link.id, up: false }), class: "icon-thumbs-down", method: :post %>
-      </div>
-    <% end %>
+    <%= render 'layouts/voting', link: link %>
   </div>
 <% end %>
 
