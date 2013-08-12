@@ -18,11 +18,14 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if @comment.update_attributes(params[:message])
+    link = @comment.link
+
+    if @comment.update_attributes(comment_params)
       flash[:success] = "Your comment has been updated"
-      redirect_to :back
+      redirect_to link_path(link)
     else
-      flash[:error] = "Something went wrong"
+      # FIXME: Temporary solution while working on comments#edit
+      flash[:error] = "Error: #{@comment.errors.full_messages}"
       redirect_to :back
     end
   end

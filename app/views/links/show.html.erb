@@ -27,7 +27,7 @@
         <small>
           Posted by <%= comment.user.username %> <%= time_ago_in_words(comment.created_at) %> ago.
           <% if current_user == comment.user %>
-            - <%= link_to "edit", edit_comment_path %>
+            - <%= link_to "edit", edit_comment_path(comment.id) %>
             - <%= link_to "Delete", comment, method: :delete %>
           <% end %>
         </small>

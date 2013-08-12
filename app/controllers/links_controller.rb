@@ -18,7 +18,6 @@ class LinksController < ApplicationController
       flash[:success] = "Your link has been submitted!"
       redirect_to @link
     else
-      flash[:notice] = "Sorry, no goose..."
       render 'new'
     end
   end
