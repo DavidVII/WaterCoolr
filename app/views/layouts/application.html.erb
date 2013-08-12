@@ -15,16 +15,8 @@
     <% end %>
 
     <div class="row">
-      <div id="main" class="span8">
+      <div id="main" class="span12">
         <%= yield %>
-      </div>
-      <div class="sidebar span4">
-        
-        <% if content_for?(:message) %>
-          <%= yield :message %>
-        <% end %>
-
-        <%= render 'layouts/sidebar' %>
       </div>
     </div>
     

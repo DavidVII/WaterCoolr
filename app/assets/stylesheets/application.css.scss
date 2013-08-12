@@ -167,6 +167,14 @@ a {
   display: inline;
 }
 
+#comment_message {
+  box-sizing: border-box;
+  width: 245px;
+  max-width: 50%;
+  min-height: 75px;
+  max-height: 300px;
+}
+
 // Validation
 
 .field_with_errors {
