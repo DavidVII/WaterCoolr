@@ -1,6 +1,6 @@
 <% if current_user && current_user.votes.where(link_id: link.id, up: true).present? %>
   <div class="voting">
-    <i class="icon-thumbs-up active"></i>
+    <%= link_to "", vote_path(@vote), class: "icon-thumbs-up active", method: :delete %>
     <p><%= link.votes.where(up: true).count - link.votes.where(up: false).count %></p>
     <%= link_to "", votes_path( vote: { link_id: link.id, up: false }), class: "icon-thumbs-down", method: :post %>
   </div>
