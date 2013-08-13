@@ -25,7 +25,7 @@ class VotesController < ApplicationController
     end
 
     def correct_user
-      @vote = current_user.votes.find_by_id(params[:id])
+      @vote = current_user.votes.find_by_link_id(params[:id])
       redirect_to root_path if @vote.nil?
     end
 end
