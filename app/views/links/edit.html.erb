@@ -1,0 +1,17 @@
+<h1>Edit your link</h1>
+
+<%= form_for(@link) do |f| %>
+  <% #FIXME: Validation errors not showing up. %>
+  <%= render 'shared/error_messages', object: @link %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn" %>
+  </div>
+<% end %>
