@@ -175,6 +175,17 @@ a {
   max-height: 300px;
 }
 
+.rememberable {
+  margin-bottom: 10px;
+}
+
+#signin {
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+  }
+}
+
 // Validation
 
 .field_with_errors {
