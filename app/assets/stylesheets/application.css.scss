@@ -179,11 +179,51 @@ a {
   margin-bottom: 10px;
 }
 
-#signin {
+#signin,
+#signup,
+#edit-profile,
+#forgot-password,
+#new-link {
   input[type="email"],
   input[type="password"],
   input[type="text"] {
     width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+  }
+
+  .alert {
+    h3 {
+      font-size: 16px;
+      line-height: inherit;
+    }
+  }
+}
+
+#forgot-password,
+#new-link {
+  input[type="submit"] {
+    width: 100%;
+  }
+}
+
+body #error_explanation {
+  @extend .alert;
+  @extend .alert-error;
+  color: #b94a48;
+  padding: 8px 35px 8px 14px;
+
+  h2 {
+    font-size: 16px;
+    line-height: inherit;
+  }
+
+  ul {
+    margin-left: 2em;
+  }
+
+  li {
+    list-style: disc;
   }
 }
 
