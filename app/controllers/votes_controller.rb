@@ -17,7 +17,6 @@ class VotesController < ApplicationController
 
   def destroy
     @vote.destroy
-    flash[:notice] = "Your vote has been deleted"
     redirect_to root_path
   end
 

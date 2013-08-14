@@ -6,7 +6,6 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     @comment = Comment.new
     @comments = @link.comments.order('created_at DESC')
-    @vote = current_user.votes.find_by(link_id: params[:id])
   end
 
   def new
