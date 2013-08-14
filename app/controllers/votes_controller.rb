@@ -17,7 +17,7 @@ class VotesController < ApplicationController
 
   def destroy
     @vote.destroy
-    redirect_to root_path
+    redirect_to :back
   end
 
   private
