@@ -3,7 +3,10 @@ class VotesController < ApplicationController
 
   def create
     if current_user.present?
-      @vote = current_user.votes.where(link_id: vote_params[:link_id]).first || current_user.votes.create(vote_params)
+      @vote = current_user.votes.where(
+        link_id: vote_params[:link_id]).first ||
+        current_user.votes.create(vote_params)
+
       @vote.update_attributes(up: vote_params[:up])
       redirect_to :back
     else
@@ -25,7 +28,7 @@ class VotesController < ApplicationController
     end
 
     def correct_user
-      @vote = current_user.votes.find_by_link_id(params[:id])
+      @vote = current_user.votes.find(params[:id])
       redirect_to root_path if @vote.nil?
     end
 end

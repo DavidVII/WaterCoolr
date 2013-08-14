@@ -8,7 +8,7 @@
     <% end %>
   </p>
 
-  <%= render 'layouts/voting', link: @link %>
+  <%= render 'layouts/voting', link: @link, vote: @vote %>
 </div>
 
 <% if @link.comments.present? %>

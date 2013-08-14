@@ -7,7 +7,7 @@
       <p><%= link_to "Comment", link %></p>
     <% end %>
 
-    <%= render 'layouts/voting', link: link %>
+    <%= render 'layouts/voting', link: link, vote: @vote %>
   </div>
 <% end %>
 
