@@ -31,9 +31,7 @@ class LinksController < ApplicationController
       flash[:success] = "Your link has been updated"
       redirect_to link_path(@link)
     else
-      # FIXME: Temporary solution while working on links#edit
-      flash[:error] = "Error: #{@link.errors.full_messages}"
-      redirect_to :back
+      render 'edit'
     end
   end
 
