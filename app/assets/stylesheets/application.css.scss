@@ -228,6 +228,10 @@ body #error_explanation {
   }
 }
 
+.alert h4 {
+  margin-bottom: 10px;
+}
+
 // Validation
 
 .field_with_errors {

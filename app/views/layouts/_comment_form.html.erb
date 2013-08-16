@@ -1,15 +1,5 @@
 <%= form_for(@comment) do |f| %>
-  <% if @comment.errors.any? %>
-  <div class="alert alert-error">
-    <h3><%= pluralize(@comment.errors.count, "error") %> stopped this comment from being submitted:</h3>
-
-    <ul>
-      <%= @comment.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
+  <%= render 'shared/error_messages', object: @comment %>
   <div class="field">
     <%= f.text_area :message, placeholder: "Add a comment" %>
   </div>

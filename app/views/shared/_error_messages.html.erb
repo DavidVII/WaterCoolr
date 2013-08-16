@@ -1,6 +1,6 @@
 <% if object.errors.any? %>
   <div class="alert alert-error">
-    <h3><%= pluralize(object.errors.count, "error") %> stopped this link from being submitted:</h3>
+    <h4><%= pluralize(object.errors.count, "error") %> stopped this link from being submitted:</h4>
 
     <ul>
       <% object.errors.full_messages.each do |msg| %>

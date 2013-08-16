@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:success] = "Your comment has been added!"
     else
-      flash[:notice] = "Your comment was not added :("
+      flash[:error] = @comment.errors.full_messages.to_sentence
     end
 
    redirect_to :back 
@@ -24,9 +24,7 @@ class CommentsController < ApplicationController
       flash[:success] = "Your comment has been updated"
       redirect_to link_path(link)
     else
-      # FIXME: Temporary solution while working on comments#edit
-      flash[:error] = "Error: #{@comment.errors.full_messages}"
-      redirect_to :back
+      render 'edit'
     end
   end
 
