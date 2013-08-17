@@ -49,6 +49,9 @@ class LinksController < ApplicationController
 
     def correct_user
       @link = current_user.links.find_by_id(params[:id])
-      redirect_to root_path if @link.nil?
+      if @link.nil?
+        flash[:error] = "You're not allowed to do that"
+        redirect_to root_path
+      end
     end
 end

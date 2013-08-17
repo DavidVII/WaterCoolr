@@ -42,7 +42,10 @@ class CommentsController < ApplicationController
 
     def correct_user
       @comment = current_user.comments.find_by_id(params[:id])
-      redirect_to root_path if @comment.nil?
+      if @comment.nil?
+        flash[:error] = "You're not allowed to do that"
+        redirect_to root_path
+      end
     end
 
 end
